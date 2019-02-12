@@ -64,7 +64,7 @@ class ImageConvertService {
             log.error(msg, ex);
             return msg;
         } catch (final TesseractException | Error ex) {
-            final String msg = MessageFormat.format("Image {0} hasTessarct error {1}.", ExceptionUtils.getRootCauseMessage(ex));
+            final String msg = MessageFormat.format("Image {0} has Tessarct error {1}.", ExceptionUtils.getRootCauseMessage(ex));
             log.error(msg, ex);
             return msg;
         } catch (final ConfigurationException ex) {
