@@ -31,5 +31,4 @@ class ImageConvertController {
     public String ocr() {
         return "Convert live!";
     }
-
 }

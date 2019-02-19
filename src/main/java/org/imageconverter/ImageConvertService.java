@@ -1,7 +1,6 @@
 package org.imageconverter;
 
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +10,6 @@ import java.text.MessageFormat;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -19,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
@@ -34,16 +31,16 @@ class ImageConvertService {
         
         try {
 
-            final BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(image.data.getBytes()));
+            final var bufferedImage = ImageIO.read(new ByteArrayInputStream(image.data.getBytes()));
 
-            final ITesseract tesseract = new Tesseract();
+            final var tesseract = new Tesseract();
 
-            final String fileConfig = getPropertyFile();
+            final var fileConfig = getPropertyFile();
 
-            final Configuration configuration = new PropertiesConfiguration(fileConfig);
+            final var configuration = new PropertiesConfiguration(fileConfig);
 
-            final String tesseractLanguage = configuration.getString("tesseract.language", "eng");
-            final String tesseractFolder = configuration.getString("tesseract.folder", "/home/tesseract/tessdata"); 
+            final var tesseractLanguage = configuration.getString("tesseract.language", "eng");
+            final var tesseractFolder = configuration.getString("tesseract.folder", "/home/tesseract/tessdata"); 
 
             tesseract.setDatapath(tesseractFolder);
             tesseract.setLanguage(tesseractLanguage);
