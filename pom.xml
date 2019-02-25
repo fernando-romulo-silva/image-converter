@@ -4,6 +4,14 @@
 	<artifactId>image-converter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+    <!--  	
+	<parent>
+		<groupId>org.allset.java</groupId>
+		<artifactId>allset-java</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	 -->	
+
 	<properties>
 		<maven.compiler.release>11</maven.compiler.release>
 
@@ -105,20 +113,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-launcher</artifactId>
-			<version>1.1.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>1.1.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.github.jai-imageio</groupId>
 			<artifactId>jai-imageio-core</artifactId>
 			<version>1.4.0</version>
@@ -141,7 +135,7 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-
+		
 	</dependencies>
 
 	<build>
