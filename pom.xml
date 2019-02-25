@@ -4,19 +4,19 @@
 	<artifactId>image-converter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-    <!--  	
 	<parent>
 		<groupId>org.allset.java</groupId>
 		<artifactId>allset-java</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 	</parent>
-	 -->	
 
 	<properties>
 		<maven.compiler.release>11</maven.compiler.release>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<junit-platform.version>5.3.1</junit-platform.version>
 	</properties>
 
 
@@ -94,24 +94,38 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.1.0</version>
+			<version>${junit-platform.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>		
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.1.0</version>
+			<version>${junit-platform.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
-			<version>5.1.0</version>
+			<version>${junit-platform.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
 		<dependency>
 			<groupId>com.github.jai-imageio</groupId>
 			<artifactId>jai-imageio-core</artifactId>
@@ -140,6 +154,7 @@
 
 	<build>
 		<plugins>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -189,6 +204,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 </project>
