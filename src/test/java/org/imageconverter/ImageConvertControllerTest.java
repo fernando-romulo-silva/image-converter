@@ -33,9 +33,20 @@ public class ImageConvertControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate = new TestRestTemplate(new RestTemplateBuilder());
-
+    
+    
     @Tag("integration")
     @Test
+    public void ocrTest() throws RestClientException {
+
+        final var result = restTemplate.<String> getForEntity("http://localhost:" + port + "/convertTestLive",  String.class);
+
+        assertEquals(HttpStatus.OK.value(), result.getStatusCodeValue());
+    }    
+    
+
+    // @Tag("integration")
+    // @Test
     public void convertTest() throws RestClientException {
 
         final ClassLoader classLoader = ImageConvertControllerTest.class.getClassLoader();
