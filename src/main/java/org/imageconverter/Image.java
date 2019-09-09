@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 
 import org.springframework.web.multipart.MultipartFile;
 
-class Image {
+final class Image {
 
     final MultipartFile data;
 

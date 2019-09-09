@@ -14,7 +14,7 @@ import org.springframework.web.multipart.support.MultipartFilter;
 
 @Configuration
 @EnableConfigurationProperties(MultipartProperties.class)
-class ImageConvertConfiguration {
+final class ImageConvertConfiguration {
 
     @Autowired
     private MultipartProperties multipartProperties;

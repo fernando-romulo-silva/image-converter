@@ -21,7 +21,7 @@ import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
 @Service
-class ImageConvertService {
+final class ImageConvertService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
