@@ -34,7 +34,6 @@ public class ImageConvertControllerTest {
     @Autowired
     private TestRestTemplate restTemplate = new TestRestTemplate(new RestTemplateBuilder());
     
-    
     @Tag("integration")
     @Test
     public void ocrTest() throws RestClientException {
