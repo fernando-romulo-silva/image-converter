@@ -12,8 +12,31 @@ I used [tesseract](https://github.com/tesseract-ocr/tesseract) for it and expose
 
 # Technologies
 
+- Java
+- Maven
+- Tesseract
+
+## Implantação em produção
+- Back end: Heroku
+
 # Modules
 
 ## image-converter-springboot
 
 The idea here is to use spring boot with the smallest docker container using spring boot technologies, like layer and modularization.
+
+# Como executar o projeto
+
+## Back end
+Pré-requisitos: Java 11
+
+```bash
+# clonar repositório
+git clone https://github.com/devsuperior/sds1-wmazoni
+
+# entrar na pasta do projeto back end
+cd backend
+
+# executar o projeto
+./mvnw spring-boot:run
+```
