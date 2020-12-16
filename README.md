@@ -8,7 +8,7 @@ A project that converts image text into simple text using diverse technologies.
 I used [tesseract](https://github.com/tesseract-ocr/tesseract) for it and exposes it as a web service using spring boot, jakarta microprofile, quarkus, etc. Each module use some 
 
 # Model
-![Model](https://github.com/fernando-romulo-silva/image-converter/master/edit/doc/class-diagram.png)
+![Model](https://github.com/fernando-romulo-silva/image-converter/blob/master/doc/class-diagram.png)
 
 # Technologies
 
