@@ -6,9 +6,10 @@
 # About
 
 A project that converts image text into simple text using diverse technologies.  
-I used [tesseract](https://github.com/tesseract-ocr/tesseract) for it and exposes it as a web service using spring boot, jakarta microprofile, quarkus, etc. Each module use some 
+I used [tesseract](https://github.com/tesseract-ocr/tesseract) for it and exposes it as a web service using spring boot, jakarta microprofile, quarkus, etc.
 
 # Model
+
 ![Model](https://github.com/fernando-romulo-silva/image-converter/blob/master/doc/class-diagram.png)
 
 # Technologies
@@ -26,18 +27,19 @@ I used [tesseract](https://github.com/tesseract-ocr/tesseract) for it and expose
 
 The idea here is to use spring boot with the smallest docker container using spring boot technologies, like layer and modularization.
 
-# Como executar o projeto
+# How to Execute
 
-## Back end
-Pré-requisitos: Java 11
+requirements: 
+ - Java 11
+ - Maven 3
 
 ```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+# clone it
+git clone https://github.com/fernando-romulo-silva/image-converter
 
-# entrar na pasta do projeto back end
-cd backend
+# for spring boot
+cd image-converter\image-converter-springboot
 
-# executar o projeto
-./mvnw spring-boot:run
+# execute
+mvn spring-boot:run
 ```
