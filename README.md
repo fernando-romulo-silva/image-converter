@@ -1,6 +1,7 @@
 # image-converter
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Twitter](https://img.shields.io/twitter/follow/nandao_romulo.svg?style=social&logo=twitter)](https://twitter.com/intent/follow?screen_name=nandao_romulo)
 
 # About
 
