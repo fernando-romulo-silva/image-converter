@@ -23,8 +23,7 @@ It's very simple application, just a controller and a service:
 - Maven
 - Tesseract
 
-## Implantação em produção
-- Back end: Heroku
+ {%  ## Implantação em produção - Back end: Heroku %}
 
 # Modules
 
