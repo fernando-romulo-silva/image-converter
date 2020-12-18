@@ -31,7 +31,7 @@ It's very simple application, just a controller and a service:
 
 The idea here is to use spring boot with the smallest docker container using spring boot technologies, like layer and modularization.
 
-# How to Execute
+### How to Execute
 
 requirements: 
  - Java 11
