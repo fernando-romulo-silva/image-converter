@@ -4,17 +4,17 @@
 	<artifactId>image-converter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
 
 	<parent>
 		<groupId>org.allset.java</groupId>
 		<artifactId>allset-java</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<modules>
 		<module>image-converter-springboot</module>
 		<module>image-converter-quarkus</module>
 		<module>image-converter-microprofile</module>
-	</modules>   
+	</modules>
 </project>
