@@ -17,5 +17,8 @@
 		<module>image-converter-quarkus</module>
 		<module>image-converter-microprofile</module>
 		<module>image-converter-micronaut</module>
+		<module>image-converter-helidon</module>
+		<module>image-converter-piranha</module>
+		<module>image-converter-kumuluz</module>
 	</modules>
 </project>

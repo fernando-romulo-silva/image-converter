@@ -5,5 +5,5 @@
     <artifactId>image-converter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>image-converter-micronaut</artifactId>
+  <artifactId>image-converter-helidon</artifactId>
 </project>
