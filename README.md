@@ -46,4 +46,12 @@ cd image-converter\image-converter-springboot
 
 # execute
 mvn spring-boot:run
+
+or
+
+docker image build -f src/main/docker/Dockerfile -t image-converter-springboot .
+
+docker run -p 8080:8080 -d --name image-converter-springboot image-converter-springboot
+
+
 ```

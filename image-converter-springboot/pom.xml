@@ -158,6 +158,7 @@
 					<mainClass>org.imageconverter.Application</mainClass>
 					<layers>
 						<enabled>true</enabled>
+						<includeLayerTools>true</includeLayerTools>
 						<configuration>${project.basedir}/src/layers.xml</configuration>
 					</layers>
 				</configuration>
