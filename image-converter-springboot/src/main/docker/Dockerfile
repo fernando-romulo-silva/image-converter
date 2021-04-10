@@ -1,4 +1,4 @@
-FROM adoptopenjdk:14-jre-hotspot as builder
+FROM adoptopenjdk:16-jre-hotspot as builder
 WORKDIR /application
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} application.jar
@@ -22,3 +22,5 @@ ENTRYPOINT [\
 #			   "-Dspring-datasource-password=\"$$(cat /run/secrets/spring.datasource.username)\"",\
                "org.springframework.boot.loader.JarLauncher"\
 ]
+
+EXPOSE 8080

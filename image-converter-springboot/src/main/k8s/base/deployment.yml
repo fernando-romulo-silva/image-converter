@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metada:
+  name: image-converter-springboot
+  namespace: general
+  labels:
+    app: image-converter-springboot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-converter-springboot
+  template:
+    metadata:
+      labels:
+        app: image-converter-springboot
+    spec:
+      containers:
+      - name: image-convert-springboot
+        image: IMAGE
+        envFrom:
+        - configMapRef:
+            name: image-convert-springboot-cm
+        - secretRef:
+            name: image-convert-springboot-scr      
