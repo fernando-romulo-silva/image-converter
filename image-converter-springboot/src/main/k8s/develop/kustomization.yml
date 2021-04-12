@@ -6,7 +6,7 @@ bases:
 
 images:
 - name: IMAGE
-  newName: gcr.io/bvs-main-98cb/general/develop
+  newName: gcr.io/myProject1/general/develop
   newTag: latest
 
 configMapGenerator:

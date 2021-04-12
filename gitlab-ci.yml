@@ -5,7 +5,7 @@ stages:
     - publish
 
 variables:
-  DOCKER_IMAGE_TAG: 'gcr.io/bvs-main-98cb/general/image-converter-springboot/$CI_COMMIT_BRANCH'
+  DOCKER_IMAGE_TAG: 'gcr.io/myProject1/general/image-converter-springboot/$CI_COMMIT_BRANCH'
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
   MAVEN_CLI_OPTS: "--batch-mode"
   APP_NAME: image-converter-springboot
