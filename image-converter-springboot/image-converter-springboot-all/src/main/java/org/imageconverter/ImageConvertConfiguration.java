@@ -1,4 +1,4 @@
-package org.imageconverter.application;
+package org.imageconverter;
 
 import static org.springframework.util.unit.DataSize.ofMegabytes;
 
@@ -16,7 +16,7 @@ import org.springframework.web.multipart.support.MultipartFilter;
 
 @Configuration
 @EnableConfigurationProperties(MultipartProperties.class)
-public class ImageConvertConfiguration {
+class ImageConvertConfiguration {
 
     @Autowired
     private MultipartProperties multipartProperties;
@@ -24,19 +24,19 @@ public class ImageConvertConfiguration {
     @Bean
     @ConditionalOnMissingBean({ MultipartConfigElement.class, CommonsMultipartResolver.class })
     public MultipartConfigElement multipartConfigElement() {
-	multipartProperties.setEnabled(true);
+        multipartProperties.setEnabled(true);
 	multipartProperties.setMaxFileSize(ofMegabytes(20));
-	multipartProperties.setMaxRequestSize(ofMegabytes(20));
-	return multipartProperties.createMultipartConfig();
+        multipartProperties.setMaxRequestSize(ofMegabytes(20));
+        return multipartProperties.createMultipartConfig();
     }
 
     @Bean
     @Order(0)
     public MultipartFilter multipartFile() {
-	final MultipartFilter multipartFilter = new MultipartFilter();
-	// same name's request parameter => final @RequestParam MultipartFile file
-	multipartFilter.setMultipartResolverBeanName("file");
-	return multipartFilter;
+        final MultipartFilter multipartFilter = new MultipartFilter();
+        // same name's request parameter => final @RequestParam MultipartFile file
+        multipartFilter.setMultipartResolverBeanName("file");
+        return multipartFilter;
     }
 
     // @Bean

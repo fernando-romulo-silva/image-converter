@@ -26,63 +26,63 @@ public class ImageConvertService {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     public String convert(final Image image) {
-        
-        log.info("Starts convert file {}.", image);
-        
-        try {
 
-            final var bufferedImage = ImageIO.read(new ByteArrayInputStream(image.data.getBytes()));
+	log.info("Starts convert file {}.", image);
 
-            final var tesseract = new Tesseract();
+	try {
 
-            final var fileConfig = getPropertyFile();
+	    final var bufferedImage = ImageIO.read(new ByteArrayInputStream(image.data.getBytes()));
 
-            final var configuration = new PropertiesConfiguration(fileConfig);
+	    final var tesseract = new Tesseract();
 
-            final var tesseractLanguage = configuration.getString("tesseract.language", "eng");
-            final var tesseractFolder = configuration.getString("tesseract.folder", "/home/tesseract/tessdata"); 
+	    final var fileConfig = getPropertyFile();
 
-            tesseract.setDatapath(tesseractFolder);
-            tesseract.setLanguage(tesseractLanguage);
+	    final var configuration = new PropertiesConfiguration(fileConfig);
 
-            final String result;
-            
-            if (image.x > 0 && image.y > 0 && image.width > 0 && image.height > 0) {
-                result = tesseract.doOCR(bufferedImage, new Rectangle(image.x, image.y, image.width, image.height));
-            } else {
-                result = tesseract.doOCR(bufferedImage);
-            }
+	    final var tesseractLanguage = configuration.getString("tesseract.language", "eng");
+	    final var tesseractFolder = configuration.getString("tesseract.folder", "/home/tesseract/tessdata");
 
-            log.info("Ends convert file {} and result {}.", image, result);
-            
-            return result;
-        } catch (final IOException ex) {
-            final String msg = MessageFormat.format("Image {0} has IO error {1}.", image, ExceptionUtils.getRootCauseMessage(ex));
-            log.error(msg, ex);
-            return msg;
-        } catch (final TesseractException | Error ex) {
-            final String msg = MessageFormat.format("Image {0} has Tessarct error {1}.", ExceptionUtils.getRootCauseMessage(ex));
-            log.error(msg, ex);
-            return msg;
-        } catch (final ConfigurationException ex) {
-            final String msg = MessageFormat.format("Application has configuration properties error {0}.", ExceptionUtils.getRootCauseMessage(ex));
-            log.error(msg, ex);
-            return msg;
-        } catch (final Throwable ex) {
-            final String msg = MessageFormat.format("Unexpected error {0}.", ExceptionUtils.getRootCauseMessage(ex));
-            log.error(msg, ex);
-            return msg;
-        } 
+	    tesseract.setDatapath(tesseractFolder);
+	    tesseract.setLanguage(tesseractLanguage);
+
+	    final String result;
+
+	    if (image.x > 0 && image.y > 0 && image.width > 0 && image.height > 0) {
+		result = tesseract.doOCR(bufferedImage, new Rectangle(image.x, image.y, image.width, image.height));
+	    } else {
+		result = tesseract.doOCR(bufferedImage);
+	    }
+
+	    log.info("Ends convert file {} and result {}.", image, result);
+
+	    return result;
+	} catch (final IOException ex) {
+	    final String msg = MessageFormat.format("Image {0} has IO error {1}.", image, ExceptionUtils.getRootCauseMessage(ex));
+	    log.error(msg, ex);
+	    return msg;
+	} catch (final TesseractException | Error ex) {
+	    final String msg = MessageFormat.format("Image {0} has Tessarct error {1}.", ExceptionUtils.getRootCauseMessage(ex));
+	    log.error(msg, ex);
+	    return msg;
+	} catch (final ConfigurationException ex) {
+	    final String msg = MessageFormat.format("Application has configuration properties error {0}.", ExceptionUtils.getRootCauseMessage(ex));
+	    log.error(msg, ex);
+	    return msg;
+	} catch (final Throwable ex) {
+	    final String msg = MessageFormat.format("Unexpected error {0}.", ExceptionUtils.getRootCauseMessage(ex));
+	    log.error(msg, ex);
+	    return msg;
+	}
     }
 
     private String getPropertyFile() {
 
-        final Path path = Paths.get("./config.properties"); // from same jar's folder
+	final Path path = Paths.get("./config.properties"); // from same jar's folder
 
-        if (Files.notExists(path)) {
-            return "config.properties"; // from src/main/resources folder
-        }
+	if (Files.notExists(path)) {
+	    return "config.properties"; // from src/main/resources folder
+	}
 
-        return "./config.properties";
+	return "./config.properties";
     }
 }
