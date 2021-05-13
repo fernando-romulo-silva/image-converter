@@ -13,11 +13,12 @@
 	<artifactId>image-converter-springboot</artifactId>
 
 	<modules>
-		<module>image-converter-springboot-main</module>
-		<module>image-converter-springboot-controller</module>
-		<module>image-converter-springboot-application</module>
-		<module>image-converter-springboot-domain</module>
-		<module>image-converter-springboot-persistence</module>
+		<!-- <module>image-converter-springboot-main</module>         -->
+		<!-- <module>image-converter-springboot-controller</module>   -->
+		<!-- <module>image-converter-springboot-application</module>  -->
+		<!-- <module>image-converter-springboot-domain</module>       -->
+		<!-- <module>image-converter-springboot-persistence</module>  -->
+		<module>image-converter-springboot-all</module>
 	</modules>
 
 	<properties>
